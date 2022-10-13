@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DN Movie</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__warp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar">
+                            <a class="navbar-brand text-white fw-bold text-uppercase" href="/">
+                                DN<span class="logo">Movie</span> 
+                            </a>
+    
+                            <ul class="header__nav" id="header__nav">
+                              <li class="header__nav-item">
+                                <a class="header__nav-link" aria-current="page" href="/">Home</a>
+                              </li>
+                              <li class="header__nav-item">
+                                <a class="header__nav-link" aria-current="page" href="/">Home</a>
+                              </li>
+                              <li class="header__nav-item">
+                                <a class="header__nav-link" aria-current="page" href="/">Home</a>
+                              </li>
+                            </ul>
+
+                            <div class="header__auth">
+                                <form class="header__search">
+                                    <input class="header__search-input" type="text" placeholder="Search...">
+                                    <button class="header__search-button" type="button">
+                                        <i class="bi-search"></i>
+                                    </button>
+                                    <button class="header__search-close" type="button">
+                                        <i class="bi bi-x"></i>
+                                    </button>
+                                </form>
+                                <button class="header__search-btn" type="button">
+                                    <i class="bi-search"></i>
+                                </button>
+                                <div class="dropdown header__lang">
+                                    <a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuLang" data-bs-toggle="dropdown" aria-expanded="false">EN <i class="icon ion-ios-arrow-down"></i></a>
+    
+                                    <ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuLang">
+                                        <li><a href="#">ID</a></li>
+                                        <li><a href="#">EN</a></li>
+                                    </ul>
+                                </div>
+                                <a href="/" class="header__sign-in">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                    <span>sign in</span>
+                                </a>
+                            </div>
+                            
+                            <button type="button" class="header__btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="home">
+            <div class="owl-carousel home__bg owl-loaded">
+                <div class="item home__cover" data-bg="https://dmitryvolkov.me/demo/hotflix2.1/main/img/home/home__bg.jpg"></div>
+                <div class="item home__cover" data-bg="https://dmitryvolkov.me/demo/hotflix2.1/main/img/home/home__bg3.jpg"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="home__title">
+                            <b>Popular</b> NOW.
+                        </h1>
+                        <button class="home__nav home__nav--prev" type="button">
+                            <i class="bi bi-arrow-left"></i>
+                        </button>
+                        <button class="home__nav home__nav--next" type="button">
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="col-12">
+                        <div class="owl-carousel home__carousel home__carousel--bg owl-loaded" id="tranding-now"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
