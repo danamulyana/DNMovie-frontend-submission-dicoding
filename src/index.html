@@ -70,8 +70,8 @@
     <main>
         <section class="home">
             <div class="owl-carousel home__bg owl-loaded">
-                <div class="item home__cover" data-bg="https://dmitryvolkov.me/demo/hotflix2.1/main/img/home/home__bg.jpg"></div>
-                <div class="item home__cover" data-bg="https://dmitryvolkov.me/demo/hotflix2.1/main/img/home/home__bg3.jpg"></div>
+                <div class="item home__cover" data-bg="assets/images/home__bg.jpg"></div>
+                <div class="item home__cover" data-bg="assets/images/home__bg3.jpg"></div>
             </div>
             <div class="container">
                 <div class="row">
@@ -92,7 +92,59 @@
                 </div>
             </div>
         </section>
+        <section class="catalog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="catalog__nav">
+                            <div class="catalog__select-wrap">
+                                <select class="catalog__select" name="genres" id="catalog-genres">
+                                </select>
+                                <select class="catalog__select" name="year" id="catalog-year">
+                                </select>
+                            </div>
+                            <div class="slider-radio">
+                                <input type="radio" name="grade" value="popularitas.desc" id="featured" checked="checked">
+                                <label for="featured">Featured</label>
+                                <input type="radio" name="grade" id="popular" value="vote_average.desc">
+                                <label for="popular">Popular</label>
+                                <input type="radio" name="grade" value="release_date.desc" id="newest" >
+                                <label for="newest">Newest</label>
+                            </div>
+                        </div>
+                        <div class="row row--grid" id="catalog-movie">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="catalog__more" type="button" id="more-catalog" data-page="1">Load More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer__content">
+                        <a href="#" class="footer__logo"><span class="text-white fw-bold text-uppercase">DN<span class="logo">Movie</span></span></a>
+                        <span class="footer__copyright">
+                            © DNMovie, 2022
+                        </span>
+                        <nav class="footer__nav">
+                            <a href="#">About Us</a>
+                            <a href="#">Contacts</a>
+                            <a href="#">Privacy policy</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="scrollup" id="scroll-up">
+        <i class="bi bi-arrow-up"></i>
+    </section>
 </body>
 </html>

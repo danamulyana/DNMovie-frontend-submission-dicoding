@@ -1,92 +1,24 @@
-import $ from 'jquery';
-import "owl.carousel";
 import "./components/CardMovie";
-import { getGenres, getTrending } from './data/network-data';
+import Tranding from "./Tranding";
+import select2 from 'select2';
+import { getGenres, getTrending,discoverMovie } from './data/network-data';
+import Catalog from "./Catalog";
+import './../assets/images/home__bg.jpg';
+import './../assets/images/home__bg3.jpg';
 
 const main = () => {
-    getGenres();
     
-    let trandingListElement = document.getElementById('tranding-now');
-    
-    const renderTranding = results => {
-        console.log(results);
-        results.forEach(movie => {
-            const trandingCardItemElement = document.createElement('card-movie');
-            trandingCardItemElement.movie = movie;
-            trandingListElement.appendChild(trandingCardItemElement);
-        });
-    }
+    getGenres().then(res => {
+        const catalogGenres = document.getElementById('catalog-genres');
 
-    const carouselTranding = () => {
-        $('.home__bg').owlCarousel({
-            animateOut: 'fadeOut',
-            animateIn: 'fadeIn',
-            mouseDrag: false,
-            touchDrag: false,
-            items: 1,
-            dots: false,
-            loop: true,
-            autoplay: false,
-            smartSpeed: 700,
-            margin: 0,
+        res.forEach(genre => {
+            catalogGenres.innerHTML += `<option value="${genre.id}">${genre.name}</option>`
         });
-    
-        $('.home__bg .item').each( function() {
-            if ($(this).attr("data-bg")){
-                $(this).css({
-                    'background': 'url(' + $(this).data('bg') + ')',
-                    'background-position': 'center center',
-                    'background-repeat': 'no-repeat',
-                    'background-size': 'cover'
-                });
-            }
-        });
-    
-        $('.home__carousel--bg').owlCarousel({
-            mouseDrag: false,
-            touchDrag: true,
-            dots: false,
-            loop: true,
-            autoplay: false,
-            smartSpeed: 700,
-            margin: 20,
-            responsive : {
-                0 : {
-                    items: 2,
-                },
-                576 : {
-                    items: 2,
-                },
-                768 : {
-                    items: 3,
-                    margin: 30,
-                },
-                992 : {
-                    items: 4,
-                    margin: 30,
-                },
-                1200 : {
-                    items: 5,
-                    margin: 30,
-                }
-            }
-        });
-    
-        $('.home__nav--next').on('click', () => {
-            $('.home__carousel--bg, .home__bg').trigger('next.owl.carousel');
-        });
-        $('.home__nav--prev').on('click', () => {
-            $('.home__carousel--bg, .home__bg').trigger('prev.owl.carousel');
-        });
-    
-        $(window).on('resize', function() {
-            var itemHeight = $('.home__bg').height();
-            $('.home__bg .item').css("height", itemHeight + "px");
-        });
-        $(window).trigger('resize');
-    }
-    
-    getTrending().then(renderTranding).then(carouselTranding);
+    });
+
+    Tranding();
+        
+    Catalog();
     /*
     MENU
     */
@@ -107,6 +39,33 @@ const main = () => {
         });
    });
 
+   $('.catalog__select').select2({
+        minimumResultsForSearch: Infinity
+   });
+
+    const now = new Date().getUTCFullYear();    
+    const years = Array(now - (now - 40)).fill('').map((v, idx) => now - idx);
+    years.map(val => {
+        document.getElementById('catalog-year').innerHTML += `<option value="${val}">${val}</option>`;
+    })
+
+    document.getElementById('scroll-up').addEventListener('click',() => {
+        $('html,body').animate({
+            scrollTop: 0
+        },300)
+    })
+
+    const scrollUp = () => {
+        const scrollup = document.getElementById('scroll-up');
+
+        if(window.scrollY >= 200){
+            scrollup.classList.add('scrollup--show');
+        }else{
+            scrollup.classList.remove('scrollup--show');
+        }
+    }
+
+    window.addEventListener('scroll',scrollUp);
 }
 
 export default main;

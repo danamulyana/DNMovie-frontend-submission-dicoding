@@ -1,0 +1,49 @@
+.slider-radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: var(--three-color);
+    padding: 5px 0;
+    border-radius: 16px;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    label{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        padding: 0 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--gray-color);
+        margin-bottom: 0;
+        cursor: pointer;
+        border-radius: 12px;
+        margin: 0 5px;
+        position: relative;
+        z-index: 100;
+        transition: color 0.5s;
+
+        &:hover{
+            color: var(--main-color);
+        }
+    }
+    
+    input[type=radio]:checked + label{
+        color: var(--main-color);
+        background-color: var(--second-color);
+    }
+
+    @media (min-width: 768px) {
+        &{
+            margin-left: auto;
+            margin-top: 0;
+            width: auto;
+        }
+    }
+}

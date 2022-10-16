@@ -1,0 +1,25 @@
+.scrollup{
+    position: fixed;
+    bottom: -20rem;
+    right: 1rem;
+    background-color: var(--second-color);
+    border: 3px solid var(--main-color);
+    border-radius: 6px;
+    padding: .5rem;
+    display: flex;
+    z-index: 9999;
+    transition: .4s;
+
+    &:hover{
+        background-color: var(--main-color);
+    }
+
+    i{
+        color: var(--white-color);
+        font-size: 1.2rem;
+    }
+
+    &--show{
+        bottom: 20px;
+    }
+}

@@ -1,15 +1,24 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 @import '~owl.carousel/dist/assets/owl.carousel.css';
+@import "~select2/dist/css/select2.min.css";
 @import "./header";
 @import "./home";
 @import "./card";
+@import "./catalog";
+@import "./select2custom";
+@import "./slider-radio";
+@import "./footer";
+@import "./scrollup";
 
 :root{
     --secondary-background: #2b2b31;
     --main-background: #131720;
     --main-color : #2f80ed;
+    --second-color: #151f30;
+    --three-color: #131720;
     --white-color: #fff;
+    --grey-color: #e0e0e0e0;
 }
 
 html {
@@ -42,6 +51,17 @@ body{
         opacity: 0;
         pointer-events: none;
         transition: 0.4s ease;
+    }
+
+    &::-webkit-scrollbar{
+        width: 13px;
+    }
+    &::-webkit-scrollbar-track{
+        background: var(--second-color);
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #2f80ed;
+        outline: 1px solid var(--second-color);
     }
 }
 
@@ -79,6 +99,11 @@ select {
   appearance: none;
   box-shadow: none;
   transition: 0.4s;
+  transition-property: color, border-color;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 .logo{

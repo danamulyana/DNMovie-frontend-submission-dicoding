@@ -1,0 +1,91 @@
+.select2-container{
+    width: auto !important;
+    margin-right: 30px;
+
+    .select2-selection--single{
+        height: 40px;
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+
+        .select2-selection__rendered{
+            line-height: 40px;
+            color: var(--white-color);
+            padding: 0 16px 0 0;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.5s;
+        }
+
+        &[aria-expanded="true"]{
+            background-color: transparent;
+        }
+
+        &:hover .select2-selection__rendered{
+            color: var(--main-color);
+        }
+    }
+
+    &--default{
+        .select2-selection--single{
+            .select2-selection__arrow{
+                height: 20px;
+                width: 16px;
+                top: 10px;
+                right: 0;
+                background-size: 16px auto;
+                margin-top: 1px;
+
+                // b{
+                //     display: none;
+                // }
+            }
+        }
+
+        .select2-results__option--highlighted.select2-results__option--selectable{
+            background-color: var(--second-color);
+            color: var(--main-color);
+            white-space: nowrap;
+        }
+
+        .select2-results__option--selected{
+            color: var(--main-color);
+            background-color: var(--second-color);
+            cursor: default;
+        }
+    }
+
+    &--open{
+        .select2-dropdown{
+            &--below{
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+            &--above{
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+            }
+        }
+    }
+}
+
+.select2-results__option{
+    padding: 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #e0e0e0;
+    height: 40px;
+    line-height: 40px;
+    transition: 0.5s;
+}
+
+.select2-dropdown{
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border-radius: 0;
+    min-width: 180px;
+    padding: 10px 0 10px 20px;
+    background-color: var(--second-color);
+}

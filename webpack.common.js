@@ -31,6 +31,14 @@ module.exports = {
                 generator: {
                     filename: 'icons/[hash].svg'
                 }
+            },{
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'assets/images/',
+                    publicPath: 'assets/images/',
+                }
             },
         ]
     },
