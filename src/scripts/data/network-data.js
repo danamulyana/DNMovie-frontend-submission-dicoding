@@ -1,7 +1,7 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = 'd9e9e6f80cafe42e4d424c90a9d6e0b0';
 
-function getTrending(){
+const getTrending = () => {
     return fetch(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
     .then(res => {
         return res.json();
@@ -14,7 +14,7 @@ function getTrending(){
     })
 }
 
-function getGenres(){
+const getGenres = () => {
     return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`)
     .then(res => {
         return res.json();
@@ -25,7 +25,7 @@ function getGenres(){
     })
 }
 
-function discoverMovie(page,genres,sort_by,year,init){
+const discoverMovie = (page,genres,sort_by,year,init) => {
     let params = {
         api_key : API_KEY,
         language: 'en-US',
