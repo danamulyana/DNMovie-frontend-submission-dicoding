@@ -29,10 +29,10 @@ const Tranding = () => {
             margin: 0,
         });
 
-        $('.home__bg .item').each( function() {
+        $('.home__bg .item').each(() => {
             if ($(this).attr("data-bg")){
                 $(this).css({
-                    'background': 'url(' + $(this).data('bg') + ')',
+                    'background': `url(${$(this).data('bg')})`,
                     'background-position': 'center center',
                     'background-repeat': 'no-repeat',
                     'background-size': 'cover'
@@ -77,9 +77,9 @@ const Tranding = () => {
             $('.home__carousel--bg, .home__bg').trigger('prev.owl.carousel');
         });
 
-        $(window).on('resize', function() {
+        $(window).on('resize', () => {
             var itemHeight = $('.home__bg').height();
-            $('.home__bg .item').css("height", itemHeight + "px");
+            $('.home__bg .item').css("height", `${itemHeight}px`);
         });
         $(window).trigger('resize');
     }

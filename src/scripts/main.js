@@ -33,8 +33,8 @@ const main = () => {
 
    const searchElement = document.querySelectorAll('.header__search-btn, .header__search-close');
 
-   searchElement.forEach((data,index) => {
-        data.addEventListener('click', (e) => {
+   searchElement.forEach((data) => {
+        data.addEventListener('click', () => {
             document.querySelector('.header__search').classList.toggle('header__search--active');
         });
    });
