@@ -78,7 +78,7 @@ const Tranding = () => {
         });
 
         $(window).on('resize', () => {
-            var itemHeight = $('.home__bg').height();
+            let itemHeight = $('.home__bg').height();
             $('.home__bg .item').css("height", `${itemHeight}px`);
         });
         $(window).trigger('resize');
